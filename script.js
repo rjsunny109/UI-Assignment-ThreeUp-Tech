@@ -25,3 +25,24 @@ window.addEventListener('scroll', () => {
     // Ensure opacity doesn't go below 0
     heroSection.style.opacity = Math.max(opacity, 0);
 });
+
+// 1) Select all elements that have the fade-in-left class
+const fadeInElements = document.querySelectorAll('.fade-in-left');
+
+// 2) Create an Intersection Observer instance
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    // 3) If the element is in the viewport
+    if (entry.isIntersecting) {
+      // Add .visible to trigger the CSS transition
+      entry.target.classList.add('visible');
+
+      // (Optional) Unobserve if you only want it to fade in once
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+// 4) Tell the observer to watch each fade-in element
+fadeInElements.forEach(el => observer.observe(el));
+

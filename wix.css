@@ -108,17 +108,22 @@ header .actions a.get-started:hover {
 
 .hero-content {
     text-align: left;
+    
 }
 
 .hero h1 {
     font-size: 80px;
     font-weight: bold;
     margin-bottom: 20px;
+    animation: fadeInFromLeft 1s ease forwards;
+    animation-delay: 0s;
 }
 
 .hero p {
     font-size: 30px;
     margin-bottom: 40px;
+    animation: fadeInFromLeft 1s ease forwards;
+    animation-delay: 0.5s;
 }
 
 .hero .cta {
@@ -129,6 +134,8 @@ header .actions a.get-started:hover {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    animation: fadeInFromLeft 1s ease forwards;
+    animation-delay: 1s;
 }
 
 .hero .cta:hover {
@@ -208,6 +215,19 @@ header .actions a.get-started:hover {
     background-color: #ff4336;
 }
 
+@keyframes fadeInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  
+  
 
 @media (max-width: 768px) {
     .hero h1 {
