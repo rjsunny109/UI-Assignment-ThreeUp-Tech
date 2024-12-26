@@ -22,12 +22,14 @@ header {
     left: 0;
     width: 100%;
     z-index: 10;
+    transition: top 0.3s ease-in-out;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; 
 }
 
 header .logo {
@@ -71,6 +73,9 @@ header .actions a.login {
     align-items: center;
     gap: 5px;
 }
+header {
+    transition: top 0.3s ease-in-out; /* Smooth transition for hiding/showing */
+}
 
 header .actions a.get-started {
     padding: 8px 16px;
@@ -98,6 +103,7 @@ header .actions a.get-started:hover {
     background-size: cover;
     height: 100vh;
     font-family: Sofia Pro;
+    transition: opacity 0.2s ease-out;
 }
 
 .hero-content {
@@ -138,6 +144,7 @@ header .actions a.get-started:hover {
 .content-container {
     display: flex;
     height: 100vh;
+    flex-wrap: wrap;
 }
 
 /* Left Section */
@@ -147,6 +154,7 @@ header .actions a.get-started:hover {
     background: url('img2.avif') no-repeat center center;
     background-size: cover;
     position: relative;
+    min-width: 300px;
 }
 
 .left-section .text-overlay {
@@ -172,6 +180,7 @@ header .actions a.get-started:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 300px;
 }
 
 .right-section article p {
@@ -197,4 +206,46 @@ header .actions a.get-started:hover {
 
 .right-section .learn-more-btn:hover {
     background-color: #ff4336;
+}
+
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 35px; 
+    }
+    .hero p {
+        font-size: 18px; 
+    }
+    .left-section .text-overlay h1 {
+        font-size: 1.8rem; 
+    }
+
+    .header-container {
+        flex-direction: column; 
+    }
+
+    .content-container {
+        flex-direction: column; 
+    }
+    .left-section, .right-section {
+        height: auto; 
+    }
+    .main-nav {
+        flex-wrap: wrap; 
+        justify-content: center; 
+        margin-left: 0; 
+    }
+
+    .hero .cta, .right-section .learn-more-btn {
+        padding: 10px 15px; 
+        font-size: 0.9rem; 
+    }
+    .hero-content {
+        text-align: center; 
+    }
+    .actions {
+        flex-wrap: wrap; /* Allow buttons to stack */
+        justify-content: center; /* Center buttons */
+    }
+    
 }
